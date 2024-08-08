@@ -1,14 +1,6 @@
 ```markup
-cd webserver
 python3 manage.py runserver
-
 ```
-
-```markup
-python3 manage.py runserver
-
-```
-
 ```markup
 python3 manage.py collectstatic
 
