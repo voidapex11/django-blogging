@@ -32,4 +32,6 @@ urlpatterns = [
     path("summernote/", include("django_summernote.urls")),
     path('__debug__/', include(debug_toolbar.urls)),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
+    path("accounts/", include("accounts.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]

@@ -4,6 +4,7 @@ from .models import Comment
 
 
 class CommentForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
     class Meta:
         model = Comment
-        fields = ("name", "email", "body")
+        fields = ("name", "password", "email", "body")

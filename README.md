@@ -1,5 +1,6 @@
 ```markup
 cd webserver
+python3 manage.py runserver
 
 ```
 

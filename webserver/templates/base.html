@@ -56,7 +56,20 @@
 
     <!-- Footer -->
     <footer class="py-3 bg-grey">
-        <p class="m-0 text-dark text-center ">Copyright &copy; Django Central</p>
+        {% if user.is_authenticated %}
+        <p><a href="{% url 'password_change' %}">Password Change</a></p>
+
+        <form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit">Log Out</button>
+        </form>
+        <p><a href="{% url 'password_change' %}">Password Change</a></p>
+
+        {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
+        <p class="m-0 text-dark text-center ">Copyright &copy; voidapex11 </p>
     </footer>
     <!-- bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

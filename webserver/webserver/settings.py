@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "django_summernote",
     'crispy_bootstrap4',
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -81,6 +82,9 @@ WSGI_APPLICATION = 'webserver.wsgi.application'
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # new
+
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -95,6 +99,8 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -133,7 +139,10 @@ CSRF_TRUSTED_ORIGINS = ["https://19ae8417-912c-4df8-bb34-3172bf3ca082-00-2yj5x8d
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    BASE_DIR / "django-summernote",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

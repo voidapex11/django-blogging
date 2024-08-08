@@ -1,6 +1,5 @@
 {% extends 'base.html' %} {% block content %}
     {% load crispy_forms_tags %}
-
     <div class="container">
         <div class="row">
             <div class="col-md-8 card mb-4  mt-3 left  top">
@@ -31,12 +30,12 @@
                             </p>
                             {{ comment.body | linebreaks }}
                         </div>
-
                     {% endfor %}
                 </div>
             </div>
             <div class="col-md-8 card mb-4  mt-3 ">
                 <div class="card-body">
+                  {% if user.is_authenticated and user.is_active %}
                     {% if new_comment %}
                         <div class="alert alert-success" role="alert">
                             Your comment is awaiting moderation
@@ -49,6 +48,19 @@
                             <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
                         </form>
                     {% endif %}
+                  {% elif user.is_active != True %}
+                    <div class="alert alert-danger" role="alert">
+                        Your account has been deactivated.
+                    </div>
+                  {% else %}
+                  
+                  <div class="alert alert-warning" role="alert">
+                    You are not logged in.
+                    <a href="{% url 'login' %}">
+                      Log in
+                    </a>
+                  </div>
+                  {% endif %}
                 </div>
             </div>
         </div>

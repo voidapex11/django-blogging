@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
-
+from django.forms.widgets import PasswordInput
+from django_summernote.fields import SummernoteTextField
+from django import forms
 STATUS = ((0, "Draft"), (1, "Publish"))
 
 
@@ -31,8 +33,9 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
-    body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+    body = SummernoteTextField()
+  
     active = models.BooleanField(default=False)
 
     class Meta:
