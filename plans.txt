@@ -1,0 +1,3 @@
+1.
+we get the username, email, password when they comment
+so have a database structured the same way as the useal login for admin stuff
