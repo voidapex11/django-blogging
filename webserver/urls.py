@@ -26,9 +26,9 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path('', include('home.urls')),
+    #path('', include('home.urls')),
     path('admin/', admin.site.urls),
-    path('blog/', include('blog.urls')),
+    path('', include('blog.urls')),
     path("summernote/", include("django_summernote.urls")),
     path('__debug__/', include(debug_toolbar.urls)),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),

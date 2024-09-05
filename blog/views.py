@@ -22,7 +22,7 @@ class PostList(generic.ListView):
 #     template_name = 'post_detail.html'
 
 
-def post_detail(request, slug):
+def post_detail(request, slug, styles=None):
   template_name = "post_detail.html"
   post = get_object_or_404(Post, slug=slug)
   comments = post.comments.filter(active=True).order_by("-created_on")
