@@ -1,23 +1,22 @@
-```markup
+```bash
 python3 manage.py runserver
 ```
-```markup
+
+```bash
 python3 manage.py collectstatic
-
-```
-
-```markup
 python3 manage.py makemigrations
-```
-
-```markup
 python3 manage.py migrate
+
 ```
 
-```markup
+```bash
 python3 manage.py createsuperuser
 ```
 
-```markup
-python3 manage.py
+```bash
+source .venv/bin/activate
+```
+
+```bash
+pip install requirements.txt
 ```

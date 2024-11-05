@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "python-template"
-version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+name = "voidapex11's blog"
+version = "0.1.0" # probably will never change from the starting value
+description = "A blogging framework I made"
+authors = ["voidapex11 <supersloth365@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.12"
