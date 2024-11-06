@@ -35,6 +35,9 @@ MANIFEST
 # where secret key is stored
 config.json
 
+# static files
+static/
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt

@@ -28,7 +28,9 @@
                             {{ comment.created_on }}
                         </span>
                     </p>
-                    {{ comment.body | linebreaks }}
+                    <p>
+                        {{ comment.body | safe }}
+                    </p>
                 </div>
                 {% endfor %}
             </div>
