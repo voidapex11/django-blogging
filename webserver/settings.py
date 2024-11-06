@@ -143,6 +143,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "static"
 STATICFILES_DIRS = [
     BASE_DIR / "django-summernote",
+    BASE_DIR / "css"
 ]
 
 # Default primary key field type

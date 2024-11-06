@@ -30,22 +30,16 @@ def post_detail(request, slug, styles=None):
   new_comment = None
   # Comment posted
   if request.method == "POST":
-    
     comment_form = CommentForm(data=request.POST)
     if comment_form.is_valid():
       
       # Create Comment object but don't save to database yet
       new_comment = comment_form.save(commit=False)
       # Assign the current post to the comment
+      
       new_comment.post = post
-      data=comment_form.data
-      user=authenticate(
-          username=request.user.username,
-          password=request.user.password,
-      )
-      
-      
-        
+      new_comment.name = request.user.username
+      new_comment.email = request.user.email
       
       # Save the comment to the database
       if request.user.is_authenticated:
